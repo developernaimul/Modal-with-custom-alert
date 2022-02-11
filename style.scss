@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --shadow-1:0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --shadow-2:0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --shadow-3:0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  &::before, &::after {
+    box-sizing: border-box;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'poppins', sans-serif;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+li {
+  list-style-type: none;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-image: url(img/Background.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.banner {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  h1 {
+    color: #FFFFFF;
+    text-shadow: 2px 2px 0 #bcbcbc, 4px 4px 0 #9c9c9c;
+  }
+
+  p {
+    width: 50vw;
+    text-align: center;
+    color: #000000;
+    text-shadow: 2px 2px 0 #bcbcbc, 4px 4px 0 #9c9c9c;
+  }
+}
+
+/* fill button */
+
+.fill-button {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  width: 150px;
+  height: 30px;
+  border: 1px solid #35495e;
+  text-align: center;
+  box-sizing: border-box;
+  color: #35495e;
+  text-decoration: none;
+  cursor: pointer;
+  line-height: 28px;
+  font-family: 'arial';
+  border-radius: 4px;
+  margin-top: 20px;
+
+  > {
+    span {
+      display: block;
+    }
+
+    .fill-button-hover {
+      &:after, &:before {
+        position: absolute;
+        top: 0;
+        opacity: 0;
+        display: block;
+        content: "";
+        width: 0;
+        height: 30px;
+      }
+
+      &:after {
+        background-color: #35495e;
+        transform: skewX(45deg);
+        transform-origin: center center;
+        transition: all .35s, opacity .4s;
+        left: 50%;
+      }
+    }
+  }
+
+  .fill-button-hover:before {
+    background-color: #42b883;
+    transition: opacity 1s;
+  }
+
+  .fill-button-text {
+    z-index: 1;
+    position: relative;
+    color: #35495e;
+    transition: color .35s;
+  }
+
+  &:hover .fill-button-text {
+    color: #42b883;
+  }
+
+  .fill-button-hover:hover:after {
+    opacity: 1;
+    left: 2%;
+    width: 95%;
+    transform: skewX(45deg);
+  }
+
+  > .fill-button-hover:hover:before {
+    opacity: 1;
+    left: 0;
+    width: 100%;
+  }
+}
+
+/* Modal */
+
+.modal {
+  width: 40vw;
+  height: 70vh;
+  background: #242526;
+  border: 1px solid #2F3031;
+  border-radius: 20px;
+  position: fixed;
+  top: 15vh;
+  left: 30vw;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: space-between;
+  display: flex;
+
+  /* Junction */
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-80px);
+  transition: all 0.3s ease-in-out;
+
+  &.active {
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  .modal-header {
+    padding: 10px 20px;
+    border-bottom: 1px solid #2F3031;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+button.close {
+  color: #A8ABAF;
+  background: #3A3B3C;
+  font-size: 35px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 0;
+  line-height: 40px;
+  font-weight: normal;
+  cursor: pointer;
+
+  &:hover {
+    background: #474849;
+  }
+}
+
+.modal {
+  .modal-header h2 {
+    color: #fff;
+    text-align: center;
+    font-weight: normal;
+    margin-left: 35%;
+  }
+
+  .modal-body {
+    padding: 20px;
+    height: 60vh;
+
+    form textarea {
+      &:focus {
+        outline: none;
+      }
+
+      width: 100%;
+      resize: none;
+      background: transparent;
+      border: none;
+      font-size: 25px;
+      color: #A3A6AA;
+      font-weight: normal;
+    }
+  }
+
+  .modal-footer {
+    background: url(./img/post_icon.png) no-repeat center center;
+    background-size: cover;
+    height: 50px;
+    margin: 20px;
+    border: 1px solid #2F3031;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+}
