@@ -202,3 +202,68 @@ button.close:hover{
     border-radius: 15px;
     cursor: pointer;
 }
+
+/* ALERT */
+.alert{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.473);
+}
+.alert-content{
+    width: 30vw;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+.alert-content .alert-header{
+    display: flex;
+    justify-content: space-between;
+}
+.alert-content .alert-header h2{}
+button.edit-close {
+    color: #A8ABAF;
+    background: #3A3B3C;
+    font-size: 30px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 0;
+    line-height: 35px;
+    font-weight: normal;
+    cursor: pointer;
+}
+button.edit-close:hover{
+    background: #474849;
+}
+.alert-content .alert-body{
+    padding: 20px 0;
+}
+.alert-content .alert-footer{
+    display: flex;
+    justify-content: end;
+}
+.alert-content .alert-footer .edit{
+    background: #fff;
+    display: inline-block;
+    padding: 2px 15px;
+    border-radius: 20px;
+    color: #0E72ED;
+    font-size: 14px;
+    margin-right: 8px;
+    border: 1px solid #A8ABAF;
+}
+.alert-content .alert-footer .discard {
+    background: #0E72ED;
+    display: inline-block;
+    padding: 2px 15px;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 14px;
+    border: 1px solid transparent;
+}
