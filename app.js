@@ -46,8 +46,8 @@ discard.addEventListener('click', function(){
 });
 
 
-alert.addEventListener('click', function(e){
-    if(e.target == this){
-        this.style.display = 'none';
-    }
-});
+// alert.addEventListener('click', function(e){
+//     if(e.target == this){
+//         this.style.display = 'none';
+//     }
+// });
